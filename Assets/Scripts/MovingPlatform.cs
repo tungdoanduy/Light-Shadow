@@ -22,6 +22,7 @@ public class MovingPlatform : MonoBehaviour
     void Update()
     {
         if (runningValue > 1||runningValue<0) step = 0 - step;
+        if (gameObject.CompareTag("Item") && step < 0) step = 0; //just for item dropped after boss die
         runningValue += step;
         movingPlatform.transform.position = Vector3.Lerp(minPos, maxPos, runningValue);
     }

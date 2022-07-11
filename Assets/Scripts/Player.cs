@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Player : MonoBehaviour
 {
     GameObject player;
@@ -30,8 +29,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         player = gameObject;
-        jumpSpeed = 12f;
-        moveSpeed = 3f;
         vfx.Stop();
     }
 
@@ -41,8 +38,8 @@ public class Player : MonoBehaviour
         Checker();
         Move();
         vfx.transform.position = player.transform.position;
-        //if (isLeftWall && player.GetComponent<Rigidbody2D>().velocity.x < 0) player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
-        //if (isRightWall && player.GetComponent<Rigidbody2D>().velocity.x > 0) player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
+        if (isLeftWall && player.GetComponent<Rigidbody2D>().velocity.x < 0) player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
+        if (isRightWall && player.GetComponent<Rigidbody2D>().velocity.x > 0) player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
     }
     void Move()
     {
@@ -60,7 +57,7 @@ public class Player : MonoBehaviour
 
                     player.GetComponent<Rigidbody2D>().velocity = new Vector2(2 * moveSpeed, player.GetComponent<Rigidbody2D>().velocity.y);
                 }
-                if (Input.GetKey(KeyCode.W) && (isOnGround||isRightWall||isLeftWall))
+                if (Input.GetKey(KeyCode.W) && (isOnGround))
                 {
 
                     player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, jumpSpeed);
@@ -78,7 +75,7 @@ public class Player : MonoBehaviour
 
                     player.GetComponent<Rigidbody2D>().velocity = new Vector2(2 * moveSpeed, player.GetComponent<Rigidbody2D>().velocity.y);
                 }
-                if (Input.GetKey(KeyCode.UpArrow) && (isOnGround || isRightWall || isLeftWall))
+                if (Input.GetKey(KeyCode.UpArrow) && (isOnGround))
                 {
 
                     player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, jumpSpeed);
@@ -118,4 +115,5 @@ public class Player : MonoBehaviour
     {
         player.transform.parent = null;
     }
+
 }
