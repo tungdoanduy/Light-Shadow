@@ -8,6 +8,7 @@ TagManager:
   - Key
   - Boss
   - Item
+  - Bullet
   layers:
   - Default
   - TransparentFX

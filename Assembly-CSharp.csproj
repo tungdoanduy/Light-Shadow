@@ -56,25 +56,30 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Boss_2\Miniboss.cs" />
     <Compile Include="Assets\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\UI_Manager.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Boss_2\FireCannon.cs" />
     <Compile Include="Assets\Scripts\Liquid.cs" />
+    <Compile Include="Assets\Scripts\MovingPlatformAdvanced.cs" />
     <Compile Include="Assets\Scripts\Spike.cs" />
     <Compile Include="Assets\Scripts\Wizard.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem\Story.cs" />
     <Compile Include="Assets\Scripts\Boss_1\AttackBoss.cs" />
+    <Compile Include="Assets\Scripts\Boss_2\Boss_2.cs" />
     <Compile Include="Assets\Scripts\WallManager\WallButton.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
     <Compile Include="Assets\Scripts\Boss_1\Cannon_Rotation.cs" />
     <Compile Include="Assets\Scripts\WallManager\Wall.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
+    <Compile Include="Assets\Scripts\Acid.cs" />
     <Compile Include="Assets\Scripts\Boss_1\IceCannon.cs" />
     <Compile Include="Assets\Scripts\Boss_1\Boss_1.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem\Dialogue.cs" />
-    <Compile Include="Assets\Scripts\Acid.cs" />
+    <Compile Include="Assets\Scripts\Boss_2\Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

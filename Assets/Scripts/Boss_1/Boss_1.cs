@@ -88,7 +88,7 @@ public class Boss_1 : MonoBehaviour
                         dialogueManager.IsEndDialogue = false;
                         storyPhase4.TriggerDialogue();
                     }
-                    if (storyPhase4&&dialogueManager.IsEndDialogue) Phase4();
+                    if (startStoryPhase4&&dialogueManager.IsEndDialogue) Phase4();
                 }
                 if (healthBar.value == 0)
                 {
@@ -98,7 +98,7 @@ public class Boss_1 : MonoBehaviour
                         dialogueManager.IsEndDialogue = false;
                         storyDie.TriggerDialogue();
                     }
-                    if (storyDie && dialogueManager.IsEndDialogue) Die();
+                    if (startStoryDie && dialogueManager.IsEndDialogue) Die();
                 }
                 if (isAttacked&&healthBar.value!=0.2f&&healthBar.value!=0)
                 {

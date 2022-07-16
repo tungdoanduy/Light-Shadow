@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class AttackBoss : MonoBehaviour
 {
-    [SerializeField] GameObject boss;
     private void OnParticleCollision(GameObject other)
     {
         
         if (other.CompareTag("Boss"))
         {
-            boss.GetComponent<Boss_1>().Attacked();
+            if(other.name == "Boss_1") other.GetComponent<Boss_1>().Attacked();
+            if (other.name == "Boss_2") other.GetComponent<Boss_2>().Attacked();
+            if (other.name == "Miniboss")
+            {
+                other.GetComponent<Miniboss>().Attacked();
+            }
         }
     }
 }

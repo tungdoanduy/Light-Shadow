@@ -11,6 +11,10 @@ public class IceCannon : MonoBehaviour
     float lastTimeAttack;
     [SerializeField] GameObject boss;
     [SerializeField] DialogueManager dialogueManager;
+    private void Start()
+    {
+        lastTimeAttack = Time.time;
+    }
     // Update is called once per frame
     void Update()
     {
