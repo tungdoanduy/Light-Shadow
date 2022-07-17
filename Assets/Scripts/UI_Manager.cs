@@ -11,12 +11,14 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] Image soundImage;
     [SerializeField] Sprite soundOn;
     [SerializeField] Sprite soundOff;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         scrollableList.SetActive(false);
         settingMenu.SetActive(false);
         soundImage.sprite = soundOn;
+        audioSource = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
     }
     public void LoadScene(string sceneName)
     {
@@ -41,8 +43,16 @@ public class UI_Manager : MonoBehaviour
     }
     public void SoundToggle()
     {
-        if (soundImage.sprite == soundOn) soundImage.sprite = soundOff;
-        else soundImage.sprite = soundOn;
+        if (soundImage.sprite == soundOn)
+        {
+            soundImage.sprite = soundOff;
+            audioSource.mute = true;
+        }
+        else
+        {
+            audioSource.mute = false;
+            soundImage.sprite = soundOn;
+        }
     }
     public void Quit()
     {

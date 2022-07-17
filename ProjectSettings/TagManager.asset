@@ -9,6 +9,7 @@ TagManager:
   - Boss
   - Item
   - Bullet
+  - Music
   layers:
   - Default
   - TransparentFX
